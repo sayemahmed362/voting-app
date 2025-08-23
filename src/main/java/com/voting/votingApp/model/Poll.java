@@ -1,8 +1,15 @@
 package com.voting.votingApp.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +27,5 @@ public class Poll {
 
     @ElementCollection
     @Column(nullable = false)
-    private List<String> options = new ArrayList<>();
-
-    @ElementCollection
-    @Column(nullable = false)
-    private List<Long> voteCount = new ArrayList<>();
+    private List<OptionDetails> options = new ArrayList<>();
 }
