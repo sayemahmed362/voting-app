@@ -1,0 +1,13 @@
+<h2>Available Polls</h2>
+<div>
+  <div *ngFor="let poll of polls">
+    <h3>{{poll.title}}</h3>
+    <div>
+      <div *ngFor="let option of poll.options; let i = index">
+          <button class="">
+            {{option.name}} ( {{option.count}} votes)
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
